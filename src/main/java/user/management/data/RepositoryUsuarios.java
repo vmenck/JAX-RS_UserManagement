@@ -11,25 +11,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Usuarios {
+public class RepositoryUsuarios {
 
 	@XmlElementWrapper(name="usuarios")
 	@XmlElement(name="usuario")
-	private List<Usuario> users;
+	private static List<Usuario> users;
 	
-	public Usuarios(){
-		this.loadUsuarios();
-	}
-
-	public List<Usuario> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<Usuario> users) {
-		this.users = users;
+	static{
+		loadUsuarios();
 	}
 	
-	private void loadUsuarios(){
+	public RepositoryUsuarios(){}
+	
+	private static void loadUsuarios(){
 		users = new ArrayList<Usuario>();
 		
 		users.add(new Usuario(1,"John Mayer","jmayer", "j123"));

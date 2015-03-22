@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import user.management.data.Usuario;
-import user.management.data.Usuarios;
+import user.management.data.RepositoryUsuarios;
 
 /**
  * Example resource class hosted at the URI path "/myresource"
@@ -22,15 +22,15 @@ import user.management.data.Usuarios;
 public class UserResources {
 
 	@GET
-	public Usuarios listarUsuarios() {
-		return new Usuarios();
+	public RepositoryUsuarios listarUsuarios() {
+		return new RepositoryUsuarios();
 	}
 
 	@GET
 	@Path("/{id}")
 	public Response find(@PathParam("id") Integer id) {
 		
-		Usuario usuario = new Usuarios().findById(id);
+		Usuario usuario = new RepositoryUsuarios().findById(id);
 		
 		if (usuario.getId().equals(0)) {
 			return Response.status(Response.Status.NOT_FOUND).build();	
