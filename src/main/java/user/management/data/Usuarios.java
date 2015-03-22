@@ -29,8 +29,7 @@ public class Usuarios {
 		this.users = users;
 	}
 	
-	private void loadUsuarios()
-	{
+	private void loadUsuarios(){
 		users = new ArrayList<Usuario>();
 		
 		users.add(new Usuario(1,"John Mayer","jmayer", "j123"));
@@ -42,8 +41,7 @@ public class Usuarios {
 		users.add(new Usuario(7,"Stevie Wonder","swonder", "s123"));
 	}
 	
-	public Usuario findById(Integer id)
-	{
+	public Usuario findById(Integer id){
 		Usuario selected = new Usuario();
 		for(Usuario u : users)
 		{

@@ -13,7 +13,9 @@ public class Usuario{
 	private String login;
 	private String password;
 	
-	public Usuario(){}
+	public Usuario(){
+		id = new Integer(0);
+	}
 	
 	public Usuario(Integer id, String nome, String login, String password){
 		this.id = id;
