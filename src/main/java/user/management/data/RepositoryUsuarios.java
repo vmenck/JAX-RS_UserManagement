@@ -47,4 +47,8 @@ public class RepositoryUsuarios {
 		}
 		return selected;
 	}
+	
+	public void addUsuario(Usuario user){
+		users.add(user);
+	}	
 }
